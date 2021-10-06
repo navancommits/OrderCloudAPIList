@@ -110,6 +110,42 @@ table, th, td {
 </tr>
 
 <tr class='endpoint'>
+<td>Create a new user</td>
+<td>/buyers/{buyerID}/users</td>
+<td></td>
+<td></td>
+<td>POST</td>
+<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
+<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
+</tr>
+<tr>
+<td colspan=7>&nbsp;</td>
+</tr>
+<tr>
+<td>
+nbsp;	
+</td>
+<td>
+nbsp;	
+</td>
+<td>/buyers</td>
+<td>POST</td>
+<td>{
+  "Name": "mynewbuyer",
+  "Active": true
+}</td>
+<td>{
+	"ID": "eg97BOldJU2z4G8ErWO0uw",
+	"Name": "mynewbuyer",
+	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+	"Active": true,
+	"DateCreated": "2021-10-06T03:10:28.93+00:00",
+	"xp": null
+}</td>
+</tr>
+	
+	
+<tr class='endpoint'>
 <td>Create an API Client</td>
 <td>/apiclients</td>
 <td>NA</td>
