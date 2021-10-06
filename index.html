@@ -32,7 +32,8 @@ table, th, td {
 <table width=100%>
 <tbody>
 <tr class='heading'>
-<th width=20%>API Description</th>
+<th width=2%>S. No.</th>
+<th width=18%>API Description</th>
 <th width=15%>Endpoint</th>
 <th width=20%>Prerequisite Description</th>
 <th  width=10%>Prerequisite Endpoint</th>
@@ -41,6 +42,7 @@ table, th, td {
 <th width=15%>Sample Response</th>
 </tr>
 <tr class='endpoint'>
+<td>1</td>
 <td>Create a security profile</td>
 <td>/securityprofiles</td>
 <td>NA</td>
@@ -83,10 +85,11 @@ table, th, td {
 }</td>
 </tr>
 <tr>
-<td colspan=7>&nbsp;</td>
+<td colspan=8>&nbsp;</td>
 </tr>
 
 <tr class='endpoint'>
+<td>2</td>
 <td>Create a new buyer</td>
 <td>/buyers</td>
 <td>NA</td>
@@ -106,10 +109,11 @@ table, th, td {
 }</td>
 </tr>
 <tr>
-<td colspan=7>&nbsp;</td>
+<td colspan=8>&nbsp;</td>
 </tr>
 
 <tr class='endpoint'>
+<td>3</td>
 <td>Create a new user</td>
 <td>/buyers/{buyerID}/users</td>
 <td></td>
@@ -127,7 +131,7 @@ table, th, td {
 	
 </td>
 <td>
-1. Create a buyer
+Create a new buyer
 </td>	
 <td>/buyers</td>
 <td>POST</td>
@@ -147,7 +151,8 @@ table, th, td {
 	
 	
 <tr class='endpoint'>
-<td>Create an API Client</td>
+<td>4</td>
+<td>Create a new API client</td>
 <td>/apiclients</td>
 <td>NA</td>
 <td>NA</td>
@@ -184,10 +189,11 @@ table, th, td {
 }</td>
 </tr>
 <tr>
-<td colspan=7>&nbsp;</td>
+<td colspan=8>&nbsp;</td>
 </tr>
 
 <tr class='endpoint'>
+<td>5</td>
 <td>Send a verification code</td>
 <td>/password/reset</td>
 <td>&nbsp;</td>
@@ -203,7 +209,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>1. Create a Security Profile</td>
+<td>Create a Security Profile</td>
 
 <td>/securityprofiles</td>
 <td>POST</td>
@@ -247,7 +253,7 @@ table, th, td {
 
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>2. Create a Buyer Organization</td>
+<td>Create a new buyer</td>
 <td>/buyers</td>
 <td>POST</td>
 <td>{
@@ -266,7 +272,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>3. Add a User to the Buyer Organization</td>
+<td>Create a user</td>
 
 <td>/buyers/{buyerID}/users</td>
 <td>POST</td>
@@ -297,7 +303,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>4. Assign user and buyer to the security profile</td>
+<td>Assign user and buyer to the security profile</td>
 <td>/securityprofiles/assignments</td>
 <td>POST</td>
 <td>{
@@ -310,7 +316,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>5. Create an API Client</td>
+<td>Create a new API Client</td>
 
 <td>/apiclients</td>
 <td>POST</td>
@@ -348,7 +354,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>6. Create a Forgotten Password message sender</td>
+<td>Create a Forgotten Password message sender</td>
 
 <td>/messagesenders</td>
 <td>POST</td>
@@ -397,7 +403,7 @@ table, th, td {
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>7. Assign the message sender to the buyer</td>
+<td>Assign the message sender to the buyer</td>
 
 <td>/messagesenders/assignments</td>
 <td>POST</td>
@@ -409,9 +415,10 @@ table, th, td {
 </tr>
 
 <tr>
-<td colspan=7>&nbsp;</td>
+<td colspan=8>&nbsp;</td>
 </tr>
 <tr class='endpoint'>
+<td>6</td>
 <td>Reset a password  by verification code</td>
 <td>/password/reset/{verificationCode}</td>
 <td></td>
@@ -429,7 +436,7 @@ table, th, td {
 
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>1. Send a verification code</td>
+<td>5. Send a verification code</td>
 <td>/password/reset</td>
 <td>POST</td>
 <td>&nbsp;</td>
