@@ -15,14 +15,20 @@ table, th, td {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-weight: 400;
     line-height: 1.5;
+    background-color: lightcyan;
 }
 
 .heading {
-  background-color: lightgrey
+  background-color: darkblue;
+  color:white;  
 }
 
 .endpoint {
-  background-color: lightblue
+  background-color: skyblue
+}
+
+.blankrow {
+  background-color: lightyellow
 }
 </style>
 </head>
@@ -84,7 +90,7 @@ table, th, td {
 	}
 }</td>
 </tr>
-<tr>
+<tr class='blankrow'>
 <td colspan=7>&nbsp;</td>
 </tr>
 
@@ -108,7 +114,68 @@ table, th, td {
 	"xp": null
 }</td>
 </tr>
+<tr  class='blankrow'>
+<td colspan=7>&nbsp;</td>
+</tr>
+
+<tr class='endpoint'>
+
+<td>Create a new address</td>
+<td>/buyers/{buyerID}/addresses</td>
+<td></td>
+<td></td>
+<td>POST</td>
+<td>{
+  "AddressName": "My Buyer Address",
+  "CompanyName": "My Company Name",
+  "FirstName": "NAVAN",
+  "LastName": "SR",
+  "Street1": "123 buyer street",
+  "City": "Melbourne",
+  "State": "VIC",
+  "Zip": "3000",
+  "Country": "AU"
+}</td>
+<td>{
+	"ID": "VbJb1P9eqEyH3c0N-SUCIg",
+	"DateCreated": "2021-10-08T08:38:56.81+00:00",
+	"CompanyName": "My Company Name",
+	"FirstName": "NAVAN",
+	"LastName": "SR",
+	"Street1": "123 buyer street",
+	"Street2": null,
+	"City": "Melbourne",
+	"State": "VIC",
+	"Zip": "3000",
+	"Country": "AU",
+	"Phone": null,
+	"AddressName": "My Buyer Address",
+	"xp": null
+}</td>
+</tr>
+
 <tr>
+
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Create a new buyer</td>
+<td>/buyers</td>
+<td>POST</td>
+<td>{
+  "Name": "mynewbuyer",
+  "Active": true
+}</td>
+<td>{
+	"ID": "eg97BOldJU2z4G8ErWO0uw",
+	"Name": "mynewbuyer",
+	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+	"Active": true,
+	"DateCreated": "2021-10-06T03:10:28.93+00:00",
+	"xp": null
+}</td>
+</tr>
+
+<tr  class='blankrow'>
 <td colspan=7>&nbsp;</td>
 </tr>
 
@@ -148,8 +215,124 @@ Create a new buyer
 	"xp": null
 }</td>
 </tr>
+<tr  class='blankrow'>
+<td colspan=7>&nbsp;</td>
+</tr>	
 	
-	
+
+<tr class='endpoint'>
+
+<td>Create a new user group</td>
+<td>/buyers/{buyerID}/usergroups</td>
+<td></td>
+<td></td>
+<td>POST</td>
+<td>{
+  "Name": "My New User Grp"
+}</td>
+<td>{
+	"ID": "1uXU4YDyR0KqPvx-20DEyg",
+	"Name": "My New User Grp",
+	"Description": null,
+	"xp": null
+}</td>
+</tr>
+<tr>
+
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Create a new buyer</td>
+<td>/buyers</td>
+<td>POST</td>
+<td>{
+  "Name": "mynewbuyer",
+  "Active": true
+}</td>
+<td>{
+	"ID": "eg97BOldJU2z4G8ErWO0uw",
+	"Name": "mynewbuyer",
+	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+	"Active": true,
+	"DateCreated": "2021-10-06T03:10:28.93+00:00",
+	"xp": null
+}</td>
+</tr>
+
+	<tr  class='blankrow'>
+<td colspan=7>&nbsp;</td>
+</tr>
+
+<tr class='endpoint'>
+
+<td>Create or update a user group user assignment</td>
+<td>/buyers/{buyerID}/usergroups/assignment</td>
+<td></td>
+<td></td>
+<td>POST</td>
+<td>{
+  "UserGroupID": "1uXU4YDyR0KqPvx-20DEyg",
+  "UserID": "1yaNbOHEWEW40LckNWtfsA"
+}</td>
+<td>Response Code: 204</td>
+</tr>
+
+
+<tr>
+
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Create a new buyer</td>
+<td>/buyers</td>
+<td>POST</td>
+<td>{
+  "Name": "mynewbuyer",
+  "Active": true
+}</td>
+<td>{
+	"ID": "eg97BOldJU2z4G8ErWO0uw",
+	"Name": "mynewbuyer",
+	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+	"Active": true,
+	"DateCreated": "2021-10-06T03:10:28.93+00:00",
+	"xp": null
+}</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Create a new user group</td>
+<td>/buyers/{buyerID}/usergroups</td>
+<td>POST</td>
+<td>{
+  "Name": "My New User Grp"
+}</td>
+<td>{
+	"ID": "1uXU4YDyR0KqPvx-20DEyg",
+	"Name": "My New User Grp",
+	"Description": null,
+	"xp": null
+}</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Create a new user</td>
+<td>/buyers/{buyerID}/users</td>
+
+<td>POST</td>
+<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
+<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
+</tr>
+
+<tr  class='blankrow'>
+<td colspan=7>&nbsp;</td>
+</tr>
+
+
 <tr class='endpoint'>
 
 <td>Create a new API client</td>
@@ -188,9 +371,10 @@ Create a new buyer
 	"MaximumGrantedCustomRoles": []
 }</td>
 </tr>
-<tr>
+<tr  class='blankrow'>
 <td colspan=7>&nbsp;</td>
 </tr>
+
 
 <tr class='endpoint'>
 
@@ -414,7 +598,7 @@ Create a new buyer
 <td>Response Code: 204</td>
 </tr>
 
-<tr>
+<tr  class='blankrow'>
 <td colspan=7>&nbsp;</td>
 </tr>
 <tr class='endpoint'>
