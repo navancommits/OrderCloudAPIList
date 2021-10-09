@@ -10,21 +10,21 @@ table, th,td {
   border-collapse: collapse;
 	
 }
-	.container p{
-        line-height: 80px; /* Create scrollbar to test positioning */
-    }
 	
-    .fixed-header, .fixed-footer{
-        width: 100%;
-        position: fixed;        
-        background: #333;
-        
-        color: #fff;
-    }
-	.fixed-header{
-        top: 0;
-    }
+.fixed-header{
+	width: 99%;
+	position: fixed;        
+	background: #616161;	
+	color: #fff;	
+	align:center;
+	top: 0;
+}
 
+.wrapper{       
+	margin-top: 100px;
+	margin-bottom: 20 px;	
+	width: 100%;
+ }
 
 .MuiTypography-body1 {
     font-size: 14px;
@@ -33,16 +33,14 @@ table, th,td {
     line-height: 1.5;
     background-color: #f6f6f6;
 }
-	.container{
-        width: 100%;
-        margin: 0 auto; /* Center the DIV horizontally */
-    }
 
 .heading {
   background-color: #f27942;
   color: white;  
-
+  position:sticky;
+  top: 70px;
 }
+
 
 .endpoint {
   background-color: #bce6e5
@@ -53,609 +51,615 @@ table, th,td {
 }
 </style>
 </head>
-<body class='MuiTypography-body1'>
-<div class="fixed-header">
-        <div align=center class="container">
-            <h1>Sitecore OrderCloud Endpoint Prerequisite List</h1>
-        </div>
-    </div>
-<div class='container'>
-<p>Context: A market place is created and available.</p>
+<body width=100% class='MuiTypography-body1'>
 
-<table width=100%>
-<tbody>
-<tr class='heading'>
+<div  class="fixed-header">
+	<div align=center>
+		<h1>Sitecore OrderCloud Endpoint Prerequisite List</h1>
+	</div>
+</div>
+<div class="wrapper">
+    <div>
+		<p>Context: A market place is created and available.</p>
+	</div>
+    <div>
+		<table width=100%>
+		<tbody>
+			<tr class='heading'>
 
-<th width=20%>API Description</th>
-<th width=15%>Endpoint</th>
-<th width=20%>Prerequisite Description</th>
-<th  width=10%>Prerequisite Endpoint</th>
-<th  width=5%>Method</th>
-<th width=15%>Sample Request</th>
-<th width=15%>Sample Response</th>
-</tr>
-<tr class='endpoint'>
+			<th width=25%>API Description</th>
+			<th width=15%>Endpoint</th>
+			<th width=25%>Prerequisite Description</th>
+			<th  width=10%>Prerequisite Endpoint</th>
+			<th  width=5%>Method</th>
+			<th width=10%>Sample Request</th>
+			<th width=10%>Sample Response</th>
+			</tr>
+			<tr class='endpoint'>
 
-<td width=20%>Create a new security profile</td>
-<td  width=15%>/securityprofiles</td>
-<td width=20%>NA</td>
-<td  width=10%>NA</td>
-<td  width=5%>POST</td>
-<td  width=15%>{
-  "ID": "mynewsecprof",
-  "Name": "my new security profile",
-  "Roles": [
-    "FullAccess"
-  ],
-  "PasswordConfig": {
-    "AllowedFailedAttempts": 3,
-    "LockoutDuration": 2,
-    "UpperCaseRequired": true,
-    "SpecialCharacterRequired": true,
-    "NumericRequired": true
-  }
-}</td>
-<td  width=15%>{
-	"ID": "mynewsecprof",
-	"Name": "my new security profile",
-	"Roles": [
-		"FullAccess"
-	],
-	"CustomRoles": [],
-	"PasswordConfig": {
-		"LimitPasswordReuse": null,
-		"MaxConsecutiveDupeChars": null,
-		"MaximumPasswordAge": null,
-		"MinimumPasswordAge": null,
-		"AllowedFailedAttempts": 3,
-		"LockoutDuration": 2,
-		"UpperCaseRequired": true,
-		"LowerCaseRequired": false,
-		"SpecialCharacterRequired": true,
-		"NumericRequired": true,
-		"MinimumCharacterCount": null
-	}
-}</td>
-</tr>
-<tr class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
+			<td>Create a new security profile</td>
+			<td>/securityprofiles</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "ID": "mynewsecprof",
+			  "Name": "my new security profile",
+			  "Roles": [
+				"FullAccess"
+			  ],
+			  "PasswordConfig": {
+				"AllowedFailedAttempts": 3,
+				"LockoutDuration": 2,
+				"UpperCaseRequired": true,
+				"SpecialCharacterRequired": true,
+				"NumericRequired": true
+			  }
+			}</td>
+			<td>{
+				"ID": "mynewsecprof",
+				"Name": "my new security profile",
+				"Roles": [
+					"FullAccess"
+				],
+				"CustomRoles": [],
+				"PasswordConfig": {
+					"LimitPasswordReuse": null,
+					"MaxConsecutiveDupeChars": null,
+					"MaximumPasswordAge": null,
+					"MinimumPasswordAge": null,
+					"AllowedFailedAttempts": 3,
+					"LockoutDuration": 2,
+					"UpperCaseRequired": true,
+					"LowerCaseRequired": false,
+					"SpecialCharacterRequired": true,
+					"NumericRequired": true,
+					"MinimumCharacterCount": null
+				}
+			}</td>
+			</tr>
+			<tr class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
 
-<tr class='endpoint'>
+			<tr class='endpoint'>
 
-<td>Create a new buyer</td>
-<td>/buyers</td>
-<td>NA</td>
-<td>NA</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
 
-<tr class='endpoint'>
+			<tr class='endpoint'>
 
-<td>Create a new address</td>
-<td>/buyers/{buyerID}/addresses</td>
-<td></td>
-<td></td>
-<td>POST</td>
-<td>{
-  "AddressName": "My Buyer Address",
-  "CompanyName": "My Company Name",
-  "FirstName": "NAVAN",
-  "LastName": "SR",
-  "Street1": "123 buyer street",
-  "City": "Melbourne",
-  "State": "VIC",
-  "Zip": "3000",
-  "Country": "AU"
-}</td>
-<td>{
-	"ID": "VbJb1P9eqEyH3c0N-SUCIg",
-	"DateCreated": "2021-10-08T08:38:56.81+00:00",
-	"CompanyName": "My Company Name",
-	"FirstName": "NAVAN",
-	"LastName": "SR",
-	"Street1": "123 buyer street",
-	"Street2": null,
-	"City": "Melbourne",
-	"State": "VIC",
-	"Zip": "3000",
-	"Country": "AU",
-	"Phone": null,
-	"AddressName": "My Buyer Address",
-	"xp": null
-}</td>
-</tr>
+			<td>Create a new address</td>
+			<td>/buyers/{buyerID}/addresses</td>
+			<td></td>
+			<td></td>
+			<td>POST</td>
+			<td>{
+			  "AddressName": "My Buyer Address",
+			  "CompanyName": "My Company Name",
+			  "FirstName": "NAVAN",
+			  "LastName": "SR",
+			  "Street1": "123 buyer street",
+			  "City": "Melbourne",
+			  "State": "VIC",
+			  "Zip": "3000",
+			  "Country": "AU"
+			}</td>
+			<td>{
+				"ID": "VbJb1P9eqEyH3c0N-SUCIg",
+				"DateCreated": "2021-10-08T08:38:56.81+00:00",
+				"CompanyName": "My Company Name",
+				"FirstName": "NAVAN",
+				"LastName": "SR",
+				"Street1": "123 buyer street",
+				"Street2": null,
+				"City": "Melbourne",
+				"State": "VIC",
+				"Zip": "3000",
+				"Country": "AU",
+				"Phone": null,
+				"AddressName": "My Buyer Address",
+				"xp": null
+			}</td>
+			</tr>
 
-<tr>
+			<tr>
+
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+
+			<tr class='endpoint'>
+
+			<td>Create a new user</td>
+			<td>/buyers/{buyerID}/users</td>
+			<td></td>
+			<td></td>
+			<td>POST</td>
+			<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
+			<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
+			</tr>
+
+			<tr>
+			<td>
+
+			</td>
+			<td>
+				
+			</td>
+			<td>
+			Create a new buyer
+			</td>	
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>	
+				
+
+			<tr class='endpoint'>
+
+			<td>Create a new user group</td>
+			<td>/buyers/{buyerID}/usergroups</td>
+			<td></td>
+			<td></td>
+			<td>POST</td>
+			<td>{
+			  "Name": "My New User Grp"
+			}</td>
+			<td>{
+				"ID": "1uXU4YDyR0KqPvx-20DEyg",
+				"Name": "My New User Grp",
+				"Description": null,
+				"xp": null
+			}</td>
+			</tr>
+			<tr>
+
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+
+				<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+
+			<tr class='endpoint'>
+
+			<td>Create or update a user group user assignment</td>
+			<td>/buyers/{buyerID}/usergroups/assignment</td>
+			<td></td>
+			<td></td>
+			<td>POST</td>
+			<td>{
+			  "UserGroupID": "1uXU4YDyR0KqPvx-20DEyg",
+			  "UserID": "1yaNbOHEWEW40LckNWtfsA"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+
+
+			<tr>
+
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new user group</td>
+			<td>/buyers/{buyerID}/usergroups</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "My New User Grp"
+			}</td>
+			<td>{
+				"ID": "1uXU4YDyR0KqPvx-20DEyg",
+				"Name": "My New User Grp",
+				"Description": null,
+				"xp": null
+			}</td>
+			</tr>
+
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new user</td>
+			<td>/buyers/{buyerID}/users</td>
+
+			<td>POST</td>
+			<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
+			<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
+			</tr>
+
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+
+
+			<tr class='endpoint'>
+
+			<td>Create a new API client</td>
+			<td>/apiclients</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "AppName": "myapiclient",
+			  "AllowAnyBuyer": true,
+			  "AllowAnySupplier": true,
+			  "Active": true,
+			  "AllowSeller": true,
+			  "AccessTokenDuration": 30
+			}</td>
+			<td>{
+				"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
+				"ClientSecret": null,
+				"AccessTokenDuration": 30,
+				"Active": true,
+				"AppName": "myapiclient",
+				"RefreshTokenDuration": 0,
+				"DefaultContextUserName": null,
+				"xp": null,
+				"AllowAnyBuyer": true,
+				"AllowAnySupplier": true,
+				"AllowSeller": true,
+				"IsAnonBuyer": false,
+				"AssignedBuyerCount": 0,
+				"AssignedSupplierCount": 0,
+				"OrderCheckoutIntegrationEventID": null,
+				"OrderCheckoutIntegrationEventName": null,
+				"MinimumRequiredRoles": [],
+				"MinimumRequiredCustomRoles": [],
+				"MaximumGrantedRoles": [],
+				"MaximumGrantedCustomRoles": []
+			}</td>
+			</tr>
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+
+
+			<tr class='endpoint'>
+
+			<td>Send a verification code</td>
+			<td>/password/reset</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>POST</td>
+			<td>{
+			  "ClientID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
+			  "Email": "contactnavaneeth@gmail.com",
+			  "Username": "buyeruser"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new Security Profile</td>
+
+			<td>/securityprofiles</td>
+			<td>POST</td>
+			<td>{
+			  "ID": "mynewsecprof",
+			  "Name": "my new security profile",
+			  "Roles": [
+				"FullAccess"
+			  ],
+			  "PasswordConfig": {
+				"AllowedFailedAttempts": 3,
+				"LockoutDuration": 2,
+				"UpperCaseRequired": true,
+				"SpecialCharacterRequired": true,
+				"NumericRequired": true
+			  }
+			}</td>
+			<td>{
+				"ID": "mynewsecprof",
+				"Name": "my new security profile",
+				"Roles": [
+					"FullAccess"
+				],
+				"CustomRoles": [],
+				"PasswordConfig": {
+					"LimitPasswordReuse": null,
+					"MaxConsecutiveDupeChars": null,
+					"MaximumPasswordAge": null,
+					"MinimumPasswordAge": null,
+					"AllowedFailedAttempts": 3,
+					"LockoutDuration": 2,
+					"UpperCaseRequired": true,
+					"LowerCaseRequired": false,
+					"SpecialCharacterRequired": true,
+					"NumericRequired": true,
+					"MinimumCharacterCount": null
+				}
+			}</td>
+			</tr>
+			<tr>
+
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
+				"Active": true,
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new user</td>
+
+			<td>/buyers/{buyerID}/users</td>
+			<td>POST</td>
+			<td>{
+			  "Active": true,
+			  "Username": "buyeruser",
+			  "Password": "P@ssword12345",
+			  "FirstName": "navan",
+			  "LastName": "sr",
+			  "Email": "contactnavaneeth@gmail.com"
+			}</td>
+			<td>{
+				"ID": "1yaNbOHEWEW40LckNWtfsA",
+				"Username": "buyeruser",
+				"Password": null,
+				"FirstName": "navan",
+				"LastName": "sr",
+				"Email": "contactnavaneeth@gmail.com",
+				"Phone": null,
+				"TermsAccepted": null,
+				"Active": true,
+				"xp": null,
+				"AvailableRoles": [],
+				"DateCreated": "2021-10-06T03:12:40.827+00:00",
+				"PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00"
+			}</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Assign user and buyer to the security profile</td>
+			<td>/securityprofiles/assignments</td>
+			<td>POST</td>
+			<td>{
+			  "SecurityProfileID": "mynewsecprof",
+			  "BuyerID": "eg97BOldJU2z4G8ErWO0uw",
+			  "UserID": "1yaNbOHEWEW40LckNWtfsA"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new API Client</td>
+
+			<td>/apiclients</td>
+			<td>POST</td>
+			<td>{
+			  "AppName": "myapiclient",
+			  "AllowAnyBuyer": true,
+			  "AllowAnySupplier": true,
+			  "Active": true,
+			  "AllowSeller": true,
+			  "AccessTokenDuration": 30
+			}</td>
+			<td>{
+				"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
+				"ClientSecret": null,
+				"AccessTokenDuration": 30,
+				"Active": true,
+				"AppName": "myapiclient",
+				"RefreshTokenDuration": 0,
+				"DefaultContextUserName": null,
+				"xp": null,
+				"AllowAnyBuyer": true,
+				"AllowAnySupplier": true,
+				"AllowSeller": true,
+				"IsAnonBuyer": false,
+				"AssignedBuyerCount": 0,
+				"AssignedSupplierCount": 0,
+				"OrderCheckoutIntegrationEventID": null,
+				"OrderCheckoutIntegrationEventName": null,
+				"MinimumRequiredRoles": [],
+				"MinimumRequiredCustomRoles": [],
+				"MaximumGrantedRoles": [],
+				"MaximumGrantedCustomRoles": []
+			}</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a Forgotten Password message sender</td>
+
+			<td>/messagesenders</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mymessagesender",
+			  "MessageTypes": [
+				"ForgottenPassword"
+			  ],
+			  "URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
+			  "SharedKey": "sharedkey",
+			  "xp": {
+				"MessageTypeConfig": [
+				  {
+					"MessageType": "ForgottenPassword",
+					"FromEmail": "noreply@ordercloud.io",
+					"Subject": "Here is the link to reset your password",
+					"TemplateName": "ForgottenPassword",
+					"MainContent": "ForgottenPassword"
+				  }
+				]
+			  }
+			}</td>
+			<td>{
+				"ID": "qUNPxguFdkSLnILIBYLFYw",
+				"Name": "mymessagesender",
+				"MessageTypes": [
+					"ForgottenPassword"
+				],
+				"Description": null,
+				"URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
+				"ElevatedRoles": null,
+				"SharedKey": "sharedkey",
+				"xp": {
+					"MessageTypeConfig": [
+						{
+							"MessageType": "ForgottenPassword",
+							"FromEmail": "noreply@ordercloud.io",
+							"Subject": "Here is the link to reset your password",
+							"TemplateName": "ForgottenPassword",
+							"MainContent": "ForgottenPassword"
+						}
+					]
+				}
+			}</td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Assign the message sender to the buyer</td>
+
+			<td>/messagesenders/assignments</td>
+			<td>POST</td>
+			<td>{
+			  "MessageSenderID": "qUNPxguFdkSLnILIBYLFYw",
+			  "BuyerID": "eg97BOldJU2z4G8ErWO0uw"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+			<tr class='endpoint'>
+
+			<td>Reset a password  by verification code</td>
+			<td>/password/reset/{verificationCode}</td>
+			<td></td>
+			<td>&nbsp;</td>
+			<td>PUT</td>
+			<td>{
+			  "ClientID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
+			  "Username": "buyeruser",
+			  "Password": "P@ssword123456"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+
+			<tr>
 
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>Create a new buyer</td>
-<td>/buyers</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
-
-<tr class='endpoint'>
-
-<td>Create a new user</td>
-<td>/buyers/{buyerID}/users</td>
-<td></td>
-<td></td>
-<td>POST</td>
-<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
-<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
-</tr>
-
-<tr>
-<td>
-
-</td>
-<td>
-	
-</td>
-<td>
-Create a new buyer
-</td>	
-<td>/buyers</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>	
-	
-
-<tr class='endpoint'>
-
-<td>Create a new user group</td>
-<td>/buyers/{buyerID}/usergroups</td>
-<td></td>
-<td></td>
-<td>POST</td>
-<td>{
-  "Name": "My New User Grp"
-}</td>
-<td>{
-	"ID": "1uXU4YDyR0KqPvx-20DEyg",
-	"Name": "My New User Grp",
-	"Description": null,
-	"xp": null
-}</td>
-</tr>
-<tr>
-
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new buyer</td>
-<td>/buyers</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-
-	<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
-
-<tr class='endpoint'>
-
-<td>Create or update a user group user assignment</td>
-<td>/buyers/{buyerID}/usergroups/assignment</td>
-<td></td>
-<td></td>
-<td>POST</td>
-<td>{
-  "UserGroupID": "1uXU4YDyR0KqPvx-20DEyg",
-  "UserID": "1yaNbOHEWEW40LckNWtfsA"
-}</td>
-<td>Response Code: 204</td>
-</tr>
-
-
-<tr>
-
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new buyer</td>
-<td>/buyers</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-
-
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new user group</td>
-<td>/buyers/{buyerID}/usergroups</td>
-<td>POST</td>
-<td>{
-  "Name": "My New User Grp"
-}</td>
-<td>{
-	"ID": "1uXU4YDyR0KqPvx-20DEyg",
-	"Name": "My New User Grp",
-	"Description": null,
-	"xp": null
-}</td>
-</tr>
-
-
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new user</td>
-<td>/buyers/{buyerID}/users</td>
-
-<td>POST</td>
-<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
-<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
-</tr>
-
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
-
-
-<tr class='endpoint'>
-
-<td>Create a new API client</td>
-<td>/apiclients</td>
-<td>NA</td>
-<td>NA</td>
-<td>POST</td>
-<td>{
-  "AppName": "myapiclient",
-  "AllowAnyBuyer": true,
-  "AllowAnySupplier": true,
-  "Active": true,
-  "AllowSeller": true,
-  "AccessTokenDuration": 30
-}</td>
-<td>{
-	"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
-	"ClientSecret": null,
-	"AccessTokenDuration": 30,
-	"Active": true,
-	"AppName": "myapiclient",
-	"RefreshTokenDuration": 0,
-	"DefaultContextUserName": null,
-	"xp": null,
-	"AllowAnyBuyer": true,
-	"AllowAnySupplier": true,
-	"AllowSeller": true,
-	"IsAnonBuyer": false,
-	"AssignedBuyerCount": 0,
-	"AssignedSupplierCount": 0,
-	"OrderCheckoutIntegrationEventID": null,
-	"OrderCheckoutIntegrationEventName": null,
-	"MinimumRequiredRoles": [],
-	"MinimumRequiredCustomRoles": [],
-	"MaximumGrantedRoles": [],
-	"MaximumGrantedCustomRoles": []
-}</td>
-</tr>
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
-
-
-<tr class='endpoint'>
-
 <td>Send a verification code</td>
 <td>/password/reset</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>POST</td>
-<td>{
-  "ClientID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
-  "Email": "contactnavaneeth@gmail.com",
-  "Username": "buyeruser"
-}</td>
-<td>Response Code: 204</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new Security Profile</td>
-
-<td>/securityprofiles</td>
-<td>POST</td>
-<td>{
-  "ID": "mynewsecprof",
-  "Name": "my new security profile",
-  "Roles": [
-    "FullAccess"
-  ],
-  "PasswordConfig": {
-    "AllowedFailedAttempts": 3,
-    "LockoutDuration": 2,
-    "UpperCaseRequired": true,
-    "SpecialCharacterRequired": true,
-    "NumericRequired": true
-  }
-}</td>
-<td>{
-	"ID": "mynewsecprof",
-	"Name": "my new security profile",
-	"Roles": [
-		"FullAccess"
-	],
-	"CustomRoles": [],
-	"PasswordConfig": {
-		"LimitPasswordReuse": null,
-		"MaxConsecutiveDupeChars": null,
-		"MaximumPasswordAge": null,
-		"MinimumPasswordAge": null,
-		"AllowedFailedAttempts": 3,
-		"LockoutDuration": 2,
-		"UpperCaseRequired": true,
-		"LowerCaseRequired": false,
-		"SpecialCharacterRequired": true,
-		"NumericRequired": true,
-		"MinimumCharacterCount": null
-	}
-}</td>
-</tr>
-<tr>
-
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new buyer</td>
-<td>/buyers</td>
-<td>POST</td>
-<td>{
-  "Name": "mynewbuyer",
-  "Active": true
-}</td>
-<td>{
-	"ID": "eg97BOldJU2z4G8ErWO0uw",
-	"Name": "mynewbuyer",
-	"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
-	"Active": true,
-	"DateCreated": "2021-10-06T03:10:28.93+00:00",
-	"xp": null
-}</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new user</td>
-
-<td>/buyers/{buyerID}/users</td>
-<td>POST</td>
-<td>{
-  "Active": true,
-  "Username": "buyeruser",
-  "Password": "P@ssword12345",
-  "FirstName": "navan",
-  "LastName": "sr",
-  "Email": "contactnavaneeth@gmail.com"
-}</td>
-<td>{
-	"ID": "1yaNbOHEWEW40LckNWtfsA",
-	"Username": "buyeruser",
-	"Password": null,
-	"FirstName": "navan",
-	"LastName": "sr",
-	"Email": "contactnavaneeth@gmail.com",
-	"Phone": null,
-	"TermsAccepted": null,
-	"Active": true,
-	"xp": null,
-	"AvailableRoles": [],
-	"DateCreated": "2021-10-06T03:12:40.827+00:00",
-	"PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00"
-}</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Assign user and buyer to the security profile</td>
-<td>/securityprofiles/assignments</td>
-<td>POST</td>
-<td>{
-  "SecurityProfileID": "mynewsecprof",
-  "BuyerID": "eg97BOldJU2z4G8ErWO0uw",
-  "UserID": "1yaNbOHEWEW40LckNWtfsA"
-}</td>
-<td>Response Code: 204</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a new API Client</td>
-
-<td>/apiclients</td>
-<td>POST</td>
-<td>{
-  "AppName": "myapiclient",
-  "AllowAnyBuyer": true,
-  "AllowAnySupplier": true,
-  "Active": true,
-  "AllowSeller": true,
-  "AccessTokenDuration": 30
-}</td>
-<td>{
-	"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
-	"ClientSecret": null,
-	"AccessTokenDuration": 30,
-	"Active": true,
-	"AppName": "myapiclient",
-	"RefreshTokenDuration": 0,
-	"DefaultContextUserName": null,
-	"xp": null,
-	"AllowAnyBuyer": true,
-	"AllowAnySupplier": true,
-	"AllowSeller": true,
-	"IsAnonBuyer": false,
-	"AssignedBuyerCount": 0,
-	"AssignedSupplierCount": 0,
-	"OrderCheckoutIntegrationEventID": null,
-	"OrderCheckoutIntegrationEventName": null,
-	"MinimumRequiredRoles": [],
-	"MinimumRequiredCustomRoles": [],
-	"MaximumGrantedRoles": [],
-	"MaximumGrantedCustomRoles": []
-}</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Create a Forgotten Password message sender</td>
-
-<td>/messagesenders</td>
-<td>POST</td>
-<td>{
-  "Name": "mymessagesender",
-  "MessageTypes": [
-    "ForgottenPassword"
-  ],
-  "URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
-  "SharedKey": "sharedkey",
-  "xp": {
-    "MessageTypeConfig": [
-      {
-        "MessageType": "ForgottenPassword",
-        "FromEmail": "noreply@ordercloud.io",
-        "Subject": "Here is the link to reset your password",
-        "TemplateName": "ForgottenPassword",
-        "MainContent": "ForgottenPassword"
-      }
-    ]
-  }
-}</td>
-<td>{
-	"ID": "qUNPxguFdkSLnILIBYLFYw",
-	"Name": "mymessagesender",
-	"MessageTypes": [
-		"ForgottenPassword"
-	],
-	"Description": null,
-	"URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
-	"ElevatedRoles": null,
-	"SharedKey": "sharedkey",
-	"xp": {
-		"MessageTypeConfig": [
-			{
-				"MessageType": "ForgottenPassword",
-				"FromEmail": "noreply@ordercloud.io",
-				"Subject": "Here is the link to reset your password",
-				"TemplateName": "ForgottenPassword",
-				"MainContent": "ForgottenPassword"
-			}
-		]
-	}
-}</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Assign the message sender to the buyer</td>
-
-<td>/messagesenders/assignments</td>
-<td>POST</td>
-<td>{
-  "MessageSenderID": "qUNPxguFdkSLnILIBYLFYw",
-  "BuyerID": "eg97BOldJU2z4G8ErWO0uw"
-}</td>
-<td>Response Code: 204</td>
-</tr>
-
-<tr  class='blankrow'>
-<td colspan=7>&nbsp;</td>
-</tr>
-<tr class='endpoint'>
-
-<td>Reset a password  by verification code</td>
-<td>/password/reset/{verificationCode}</td>
-<td></td>
-<td>&nbsp;</td>
-<td>PUT</td>
-<td>{
-  "ClientID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
-  "Username": "buyeruser",
-  "Password": "P@ssword123456"
-}</td>
-<td>Response Code: 204</td>
-</tr>
-
-<tr>
-
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>Send a verification code</td>
-<td>/password/reset</td>
 <td>POST</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr>
+
 	</tbody>
 </table>
-		</div>
+	</div>
+
+</div>
+
 </body>
 </html>
