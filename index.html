@@ -56,7 +56,7 @@ table, th,td {
 <div  class="fixed-header">
 	<div align=center>
 		<h1>Sitecore OrderCloud Endpoint Prerequisite List</h1>
-	</div>
+	</div>	
 </div>
 <div class="wrapper">
     <div>
@@ -75,7 +75,7 @@ table, th,td {
 			<th width=10%>Sample Request</th>
 			<th width=10%>Sample Response</th>
 			</tr>
-			<tr class='endpoint'>
+			<tr class='endpoint'>			
 
 			<td>Create a new security profile</td>
 			<td>/securityprofiles</td>
@@ -121,6 +121,48 @@ table, th,td {
 			<tr class='blankrow'>
 			<td colspan=7>&nbsp;</td>
 			</tr>
+			
+			<tr class='endpoint'>
+
+			<td>Create a new API client</td>
+			<td>/apiclients</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "AppName": "myapiclient",
+			  "AllowAnyBuyer": true,
+			  "AllowAnySupplier": true,
+			  "Active": true,
+			  "AllowSeller": true,
+			  "AccessTokenDuration": 30
+			}</td>
+			<td>{
+				"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
+				"ClientSecret": null,
+				"AccessTokenDuration": 30,
+				"Active": true,
+				"AppName": "myapiclient",
+				"RefreshTokenDuration": 0,
+				"DefaultContextUserName": null,
+				"xp": null,
+				"AllowAnyBuyer": true,
+				"AllowAnySupplier": true,
+				"AllowSeller": true,
+				"IsAnonBuyer": false,
+				"AssignedBuyerCount": 0,
+				"AssignedSupplierCount": 0,
+				"OrderCheckoutIntegrationEventID": null,
+				"OrderCheckoutIntegrationEventName": null,
+				"MinimumRequiredRoles": [],
+				"MinimumRequiredCustomRoles": [],
+				"MaximumGrantedRoles": [],
+				"MaximumGrantedCustomRoles": []
+			}</td>
+			</tr>
+			<tr class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
 
 			<tr class='endpoint'>
 
@@ -142,6 +184,150 @@ table, th,td {
 				"xp": null
 			}</td>
 			</tr>
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+			
+			<tr class='endpoint'>
+
+			<td>Create a new supplier</td>
+			<td>/suppliers</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "My New Supplier",
+			  "Active": true,
+			  "AllBuyersCanOrder": true
+			}</td>
+			<td>{
+				"ID": "agUCzqJ9ck-p2v8Lt2Q07A",
+				"Name": "My New Supplier",
+				"Active": true,
+				"DateCreated": "2021-10-09T23:58:35.93+00:00",
+				"AllBuyersCanOrder": true,
+				"xp": null
+			}</td>
+			</tr>
+			
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+			
+			<tr class='endpoint'>
+
+			<td>Create a new catalog</td>
+			<td>/catalogs</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "My New Catalog",
+			  "Active": true
+			}</td>
+			<td>{
+				"ID": "7GwdSyH24UigtRYgqeBy9w",
+				"OwnerID": "mynewmktplace20211006",
+				"Name": "My New Catalog",
+				"Description": null,
+				"Active": true,
+				"CategoryCount": 0,
+				"xp": null
+			}</td>
+			</tr>
+			
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+			
+			<tr class='endpoint'>
+
+			<td>Create a new admin user</td>
+			<td>/adminusers</td>
+			<td>This is a unique user across the market place</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "Active": true,
+			  "Username": "Unique Mkt PLace user",
+			  "FirstName": "Unique user first name",
+			  "LastName": "Unique user last name",
+			  "Email": "contactnavaneeth@gmail.com",
+			  "Password": "P@ssword1234567"
+			}</td>
+			<td>{
+				"ID": "hGmwH4n0JEWoPd34q7yGCg",
+				"Username": "Unique Mkt PLace user",
+				"Password": null,
+				"FirstName": "Unique user first name",
+				"LastName": "Unique user last name",
+				"Email": "contactnavaneeth@gmail.com",
+				"Phone": null,
+				"TermsAccepted": null,
+				"Active": true,
+				"xp": null,
+				"AvailableRoles": [],
+				"DateCreated": "2021-10-10T00:13:12.823+00:00",
+				"PasswordLastSetDate": "2021-10-10T00:13:12.87+00:00"
+			}</td>
+			</tr>
+			
+			
+			<tr  class='blankrow'>
+			<td colspan=7>&nbsp;</td>
+			</tr>
+			
+			<tr class='endpoint'>
+
+			<td>Create a new message sender</td>
+			<td>/messagesenders</td>
+			<td>NA</td>
+			<td>NA</td>
+			<td>POST</td>
+			<td>{
+			  "MessageTypes": [
+				"NewUserInvitation"
+			  ],
+			  "Name": "newusermsgsender",
+			  "URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
+			  "SharedKey": "mysharedkey",
+			  "xp": {
+				"MessageTypeConfig": [
+				  {
+					"MessageType": "NewUserInvitation",
+					"FromEmail": "noreply@ordercloud.io",
+					"Subject": "Here is the new user details",
+					"TemplateName": "NewUserInvitation",
+					"MainContent": "NewUserInvitation"
+				  }
+				]
+			  }
+			}</td>
+			<td>{
+				"ID": "uib7uiCj5UiRdipGUHESqw",
+				"Name": "newusermsgsender",
+				"MessageTypes": [
+					"NewUserInvitation"
+				],
+				"Description": null,
+				"URL": "https://oc-integrations.azurewebsites.net/v1/mandrill/{messagetype}",
+				"ElevatedRoles": null,
+				"SharedKey": "mysharedkey",
+				"xp": {
+					"MessageTypeConfig": [
+						{
+							"MessageType": "NewUserInvitation",
+							"FromEmail": "noreply@ordercloud.io",
+							"Subject": "Here is the new user details",
+							"TemplateName": "NewUserInvitation",
+							"MainContent": "NewUserInvitation"
+						}
+					]
+				}
+			}</td>
+			</tr>
+			
+						
 			<tr  class='blankrow'>
 			<td colspan=7>&nbsp;</td>
 			</tr>
@@ -202,11 +388,11 @@ table, th,td {
 				"xp": null
 			}</td>
 			</tr>
-
+			
 			<tr  class='blankrow'>
 			<td colspan=7>&nbsp;</td>
 			</tr>
-
+			
 			<tr class='endpoint'>
 
 			<td>Create a new user</td>
@@ -359,46 +545,113 @@ table, th,td {
 			<tr  class='blankrow'>
 			<td colspan=7>&nbsp;</td>
 			</tr>
-
-
+						
+			
 			<tr class='endpoint'>
 
-			<td>Create a new API client</td>
-			<td>/apiclients</td>
-			<td>NA</td>
-			<td>NA</td>
+			<td>Create or update an address assignment</td>
+			<td>/buyers/{buyerID}/addresses/assignments</td>
+			<td></td>
+			<td></td>
 			<td>POST</td>
 			<td>{
-			  "AppName": "myapiclient",
-			  "AllowAnyBuyer": true,
-			  "AllowAnySupplier": true,
-			  "Active": true,
-			  "AllowSeller": true,
-			  "AccessTokenDuration": 30
+			  "AddressID": "VbJb1P9eqEyH3c0N-SUCIg",
+			  "IsShipping": true,
+			  "IsBilling": true,
+			  "UserID": "1yaNbOHEWEW40LckNWtfsA"
+			}</td>
+			<td>Response Code: 204</td>
+			</tr>
+			
+			<tr>
+
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new buyer</td>
+			<td>/buyers</td>
+			<td>POST</td>
+			<td>{
+			  "Name": "mynewbuyer",
+			  "Active": true
 			}</td>
 			<td>{
-				"ID": "8AE3C3F9-838C-4ED7-B28C-0E43835C9E27",
-				"ClientSecret": null,
-				"AccessTokenDuration": 30,
+				"ID": "eg97BOldJU2z4G8ErWO0uw",
+				"Name": "mynewbuyer",
+				"DefaultCatalogID": "eg97BOldJU2z4G8ErWO0uw",
 				"Active": true,
-				"AppName": "myapiclient",
-				"RefreshTokenDuration": 0,
-				"DefaultContextUserName": null,
-				"xp": null,
-				"AllowAnyBuyer": true,
-				"AllowAnySupplier": true,
-				"AllowSeller": true,
-				"IsAnonBuyer": false,
-				"AssignedBuyerCount": 0,
-				"AssignedSupplierCount": 0,
-				"OrderCheckoutIntegrationEventID": null,
-				"OrderCheckoutIntegrationEventName": null,
-				"MinimumRequiredRoles": [],
-				"MinimumRequiredCustomRoles": [],
-				"MaximumGrantedRoles": [],
-				"MaximumGrantedCustomRoles": []
+				"DateCreated": "2021-10-06T03:10:28.93+00:00",
+				"xp": null
+			}</td>
+			</tr>		
+			
+			
+			<tr>
+			<td>Either User Id or User Group Id is a prerequisite</td>
+			<td>&nbsp;</td>
+			<td>Create a new user</td>
+			<td>/buyers/{buyerID}/users</td>
+
+			<td>POST</td>
+			<td>{ "Active": true, "Username": "buyeruser", "Password": "P@ssword12345", "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com" }</td>
+			<td>{ "ID": "1yaNbOHEWEW40LckNWtfsA", "Username": "buyeruser", "Password": null, "FirstName": "navan", "LastName": "sr", "Email": "contactnavaneeth@gmail.com", "Phone": null, "TermsAccepted": null, "Active": true, "xp": null, "AvailableRoles": [], "DateCreated": "2021-10-06T03:12:40.827+00:00", "PasswordLastSetDate": "2021-10-06T03:12:40.877+00:00" }</td>
+			</tr>
+			
+			<tr>
+			<td>Either User Id or User Group Id is a prerequisite</td>
+			<td>&nbsp;</td>
+			<td>Create a new user group</td>
+			<td>/buyers/{buyerID}/usergroups</td>
+
+			<td>POST</td>
+			<td>{
+			  "Name": "My New User Grp"
+			}</td>
+			<td>{
+				"ID": "1uXU4YDyR0KqPvx-20DEyg",
+				"Name": "My New User Grp",
+				"Description": null,
+				"xp": null
 			}</td>
 			</tr>
+			
+			
+			<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>Create a new address</td>
+			<td>/buyers/{buyerID}/addresses</td>
+
+			<td>POST</td>
+			<td>{
+			  "AddressName": "My Buyer Address",
+			  "CompanyName": "My Company Name",
+			  "FirstName": "NAVAN",
+			  "LastName": "SR",
+			  "Street1": "123 buyer street",
+			  "City": "Melbourne",
+			  "State": "VIC",
+			  "Zip": "3000",
+			  "Country": "AU"
+			}</td>
+			<td>{
+				"ID": "VbJb1P9eqEyH3c0N-SUCIg",
+				"DateCreated": "2021-10-08T08:38:56.81+00:00",
+				"CompanyName": "My Company Name",
+				"FirstName": "NAVAN",
+				"LastName": "SR",
+				"Street1": "123 buyer street",
+				"Street2": null,
+				"City": "Melbourne",
+				"State": "VIC",
+				"Zip": "3000",
+				"Country": "AU",
+				"Phone": null,
+				"AddressName": "My Buyer Address",
+				"xp": null
+			}</td>
+			</tr>
+			
+			
 			<tr  class='blankrow'>
 			<td colspan=7>&nbsp;</td>
 			</tr>
